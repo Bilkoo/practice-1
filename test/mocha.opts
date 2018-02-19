@@ -1,0 +1,4 @@
+--require reify
+--require ./test/jsdom
+--reporter nyan
+--recursive
