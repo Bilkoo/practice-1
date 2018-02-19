@@ -1,0 +1,57 @@
+{
+  "name": "rollup-mocha-boilerplate",
+  "version": "0.0.1",
+  "author": "Sergey Koloney",
+  "contributors": [],
+  "license": "MIT",
+  "description": "Practice 1",
+  "main": "build/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skoloney/practice-1"
+  },
+  "bugs": "https://github.com/skoloney/practice-1/issues",
+  "homepage": "https://github.com/skoloney/practice-1",
+  "keywords": [
+    "JavaScript",
+    "ECMAScript2015",
+    "assignments"
+  ],
+  "scripts": {
+    "lint": "eslint src test",
+    "test": "mocha",
+    "test:all": "mocha ./test/spec/index.js",
+    "test:browser": "run-p build:test sync:test",
+    "build:test": "rollup -c rollup.config.test.js --watch",
+    "sync:test": "browser-sync start --files build/test-bundle.js --server . --index ./test/index.html",
+    "postinstall": "rollup-watch-fix"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babelrc-rollup": "^3.0.0",
+    "browser-sync": "^2.23.5",
+    "chai": "^4.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-eslint": "^4.0.0",
+    "jsdom": "^11.5.1",
+    "mocha": "^4.1.0",
+    "npm-run-all": "^4.1.2",
+    "reify": "^0.13.6",
+    "rollup": "^0.53.4",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-multi-entry": "^2.0.2",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-watch-fix": "0.0.3",
+    "source-map-support": "^0.5.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
